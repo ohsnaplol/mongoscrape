@@ -3,11 +3,14 @@ const mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var ArticleSchema = new Schema({
-  author: string,
-  headline: string,
+  author: String,
+  headline: {
+   type: String,
+   unique: true 
+  },
   date: Date,
-  link: string,
-  image: string
+  link: String,
+  image: String
 })
 
 var Article = mongoose.model('Article', ArticleSchema)
